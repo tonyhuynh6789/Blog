@@ -1,12 +1,12 @@
 class Article 
 
-        attr_accessor :title, :date, :content_url
+        attr_accessor :title, :date, :contents
         @@all = []
 
-    def initialize(title, date, content_url)
+    def initialize(title, date, contents)
         @title = title
         @date = date
-        @content_url = content_url
+        @contents = contents
         self.save
     end 
 

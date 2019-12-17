@@ -40,7 +40,7 @@ end
 def display_contents(input)
     article = Article.all[input -1]
     Scraper.scrape_contents(article)
-        puts article.content_url   
+        puts article.contents
 end 
 end 
 

@@ -7,21 +7,21 @@ class Scraper
 
   
     array_of_title = doc.css('div.col-sm-10.col-sm-offset-1 header.post-title')
-    title_of_articles = array_of_title.each do |section|
+    title_of_articles = array_of_title.each do |titles|
 
-            title = section.css('a').text.gsub("here","")
-            date = section.css('p time').text
-            content_url = section.css('a')[0]['href']
-            Article.new(title, date, content_url)
+            title = titles.css('a').text.gsub("here","")
+            date = titles.css('p time').text
+            contents = titles.css('a')[0]['href']
+            Article.new(title, date, contents)
         
         end 
     end 
 
 
-    def self.scrape_contents(article_obj)
-        html = open(article_obj.content_url)
+    def self.scrape_contents(article_ob)
+        html = open(article_ob.contents)
         doc = Nokogiri::HTML(html)
-        article_obj.content_url = doc.css('div.col-sm-10.col-sm-offset-1 section.post-content p.lead').text
+        article_ob.contents = doc.css('div.col-sm-10.col-sm-offset-1 section.post-content p.lead').text
     end 
 
 end 
