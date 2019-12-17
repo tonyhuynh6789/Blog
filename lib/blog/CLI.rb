@@ -39,7 +39,7 @@ def ask_for_title_choice
             end 
             puts (' ' * 30) + "Here is the summary"
             puts display_contents(input)  
-            break_or_return(input)
+            puts break_or_return(input)
 end 
 
 
@@ -61,7 +61,7 @@ def break_or_return(input)
         when "exit"
             break 
         when "main"
-            puts "Back to main menu"
+            puts "Back To Main Page"
             display_titles_dates
             ask_for_title_choice 
         else 
