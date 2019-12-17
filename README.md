@@ -1,6 +1,6 @@
 # Blog
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/blog`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to my Blog application, the users would easily grab  tittles and their published dates from the Homepage. In addition, users would have an access to article's content sumary by choosing the number according to tittle indexes. Finanlly, for users' convienece there are options to exit or go back to HomePage depending on users' preferences. 
 
 TODO: Delete this and the text above, and describe your gem
 

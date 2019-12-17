@@ -11,15 +11,15 @@ class Scraper
 
             title = titles.css('a').text.gsub("here","")
             date = titles.css('p time').text
-            contents = titles.css('a')[0]['href']
-            Article.new(title, date, contents)
+            url = titles.css('a')[0]['href']
+            Article.new(title, date, url)
         
         end 
     end 
 
 
     def self.scrape_contents(article_ob)
-        html = open(article_ob.contents)
+        html = open(article_ob.url)
         doc = Nokogiri::HTML(html)
         article_ob.contents = doc.css('div.col-sm-10.col-sm-offset-1 section.post-content p.lead').text
     end 
