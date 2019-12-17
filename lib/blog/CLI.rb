@@ -2,7 +2,7 @@ class CLI
 
 
 def run
-     puts ('  ' * 8) + '*****Wellcome to the Blog sponsored by Flatiron*****'
+     puts ('  ' * 6) + '*****Wellcome to the Blog built by Laurence Bradford*****'
         Scraper.scrape_title_and_dates
         display_titles_dates
         ask_for_title_choice 
@@ -11,7 +11,7 @@ end
 
 
 def display_titles_dates
-    puts (' ' * 15) + "Bellow are tittles and their published dates and times"
+    puts (' ' * 14) + "Bellow are tittles and their published dates and times"
     
         Article.all.each.with_index(1) do |title_date,idx|
         puts "#{idx}. #{title_date.title}."
